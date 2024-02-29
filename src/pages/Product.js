@@ -26,12 +26,12 @@ export default () => {
   // console.log(selectedProduct,'kkkkkkkk');
   const id = window.location.pathname.split('/')[2]
   // console.log(id,'pkpkpkpkpkpk');
-  useEffect(()=>{
-    if(!selectedProduct){
-      // console.log(selectedProduct,'ppppppppp');
-      setSelectedProduct(productsCards?.find(item=>item.id == id))
-    }
-  },[id,selectedProduct,setSelectedProduct])
+  // useEffect(()=>{
+  //   if(!selectedProduct){
+  //     // console.log(selectedProduct,'ppppppppp');
+  //     setSelectedProduct(productsCards?.find(item=>item.id == id))
+  //   }
+  // },[id,selectedProduct,setSelectedProduct])
   return (
     <AnimationRevealPage>
       <Header />
