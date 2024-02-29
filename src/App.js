@@ -126,9 +126,9 @@ export default function App() {
       <GlobalStyles />
       <Router>
         <Routes>
-          <Route path="/components/:type/:subtype/:name" element={<ComponentRenderer />} />
-          <Route path="/components/:type/:name" element={<ComponentRenderer />} />
-          <Route path="/thank-you" element={<ThankYouPage />} />
+          {/* <Route path="/components/:type/:subtype/:name" element={<ComponentRenderer />} /> */}
+          {/* <Route path="/components/:type/:name" element={<ComponentRenderer />} /> */}
+          {/* <Route path="/thank-you" element={<ThankYouPage />} /> */}
           <Route path="/" element={<MainLandingPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />

@@ -73,21 +73,21 @@ const PreviewCardImage = styled(motion.div)`
 `;
 const PreviewButton = tw(PrimaryButtonBase)`w-full rounded-b-lg rounded-t-none py-5 font-semibold`;
 
-const ComponentsContainer = tw.div`mt-24`;
-const ComponentsType = tw.h3`text-4xl font-black text-primary-500 border-b-4 border-primary-500 inline-block`;
-const Components = tw.div``;
-const Component = tw.div`mt-12 border rounded-lg bg-white`;
-const ComponentHeading = tw.div`px-8 py-5 border-b flex flex-col sm:flex-row justify-between items-center`;
-const ComponentName = tw.h6`text-lg`;
-const ComponentPreviewLink = tw.a`mt-4 sm:mt-0 text-primary-500 hocus:text-primary-900 transition duration-300 font-semibold flex items-center`;
-const ComponentContent = tw.div`flex justify-between overflow-hidden rounded-b-lg bg-gray-600 relative`;
-const ResizableBox = styled(Rnd)`
-  ${tw`relative! bg-white pr-4`}
-  .resizeHandleWrapper > div {
-    ${tw`w-4! right-0!`}
-  }
-`;
-const ResizeHandleButton = tw.button`cursor-col-resize focus:outline-none w-4 border-l bg-gray-100 absolute right-0 inset-y-0`;
+// const ComponentsContainer = tw.div`mt-24`;
+// const ComponentsType = tw.h3`text-4xl font-black text-primary-500 border-b-4 border-primary-500 inline-block`;
+// const Components = tw.div``;
+// const Component = tw.div`mt-12 border rounded-lg bg-white`;
+// const ComponentHeading = tw.div`px-8 py-5 border-b flex flex-col sm:flex-row justify-between items-center`;
+// const ComponentName = tw.h6`text-lg`;
+// const ComponentPreviewLink = tw.a`mt-4 sm:mt-0 text-primary-500 hocus:text-primary-900 transition duration-300 font-semibold flex items-center`;
+// const ComponentContent = tw.div`flex justify-between overflow-hidden rounded-b-lg bg-gray-600 relative`;
+// const ResizableBox = styled(Rnd)`
+//   ${tw`relative! bg-white pr-4`}
+//   .resizeHandleWrapper > div {
+//     ${tw`w-4! right-0!`}
+//   }
+// `;
+// const ResizeHandleButton = tw.button`cursor-col-resize focus:outline-none w-4 border-l bg-gray-100 absolute right-0 inset-y-0`;
 
 export default ({
   features = null,
@@ -106,33 +106,33 @@ export default ({
    * Using gtag like this because we only want to use Google Analytics when Main Landing Page is rendered
    * Remove this part and the the gtag script inside public/index.html if you dont need google analytics
    */
-  useEffect(() => {
-    window.gtag("js", new Date());
-    window.gtag("config", "UA-45799926-9");
-  }, [])
+  // useEffect(() => {
+  //   window.gtag("js", new Date());
+  //   window.gtag("config", "UA-45799926-9");
+  // }, [])
 
-  const previewImageAnimationVariants = {
-    rest: {
-      backgroundPositionY: "0%"
-    },
-    hover: {
-      backgroundPositionY: "100%",
-      transition: { type: "tween", ease: "linear", duration: 5 }
-    }
-  };
+  // const previewImageAnimationVariants = {
+  //   rest: {
+  //     backgroundPositionY: "0%"
+  //   },
+  //   hover: {
+  //     backgroundPositionY: "100%",
+  //     transition: { type: "tween", ease: "linear", duration: 5 }
+  //   }
+  // };
 
-  const noOfLandingPages = Object.keys(landingPages).length;
-  const noOfInnerPages = Object.keys(innerPages).length;
-  const noOfComponentBlocks = Object.values(blocks).reduce((acc, block) => acc + Object.keys(block.elements).length, 0);
+  // const noOfLandingPages = Object.keys(landingPages).length;
+  // const noOfInnerPages = Object.keys(innerPages).length;
+  // const noOfComponentBlocks = Object.values(blocks).reduce((acc, block) => acc + Object.keys(block.elements).length, 0);
 
-  features = features || [
-    `${noOfLandingPages} Landing Page Demos`,
-    `${noOfInnerPages} Inner Pages`,
-    `${noOfComponentBlocks} Components`,
-    "Uses TailwindCSS",
-    "Fully Responsive",
-    "Fully Customizable"
-  ];
+  // features = features || [
+  //   `${noOfLandingPages} Landing Page Demos`,
+  //   `${noOfInnerPages} Inner Pages`,
+  //   `${noOfComponentBlocks} Components`,
+  //   "Uses TailwindCSS",
+  //   "Fully Responsive",
+  //   "Fully Customizable"
+  // ];
 
   return (
     // <AgencyLandingPage/>
@@ -140,85 +140,85 @@ export default ({
   );
 };
 
-const BlocksRenderer = ({ blocks }) => {
-  const [lastVisibleBlockIndex, setLastVisibleBlockIndex] = useState(0);
+// const BlocksRenderer = ({ blocks }) => {
+//   const [lastVisibleBlockIndex, setLastVisibleBlockIndex] = useState(0);
 
-  const updateLastVisibleBlockIndex = index => {
-    console.log("LAST WAS ", lastVisibleBlockIndex);
-    if (index > lastVisibleBlockIndex) setLastVisibleBlockIndex(index);
-  };
+//   const updateLastVisibleBlockIndex = index => {
+//     console.log("LAST WAS ", lastVisibleBlockIndex);
+//     if (index > lastVisibleBlockIndex) setLastVisibleBlockIndex(index);
+//   };
 
-  return (
-    <ComponentsContainer>
-      {blocks.map(
-        (block, index) =>
-          lastVisibleBlockIndex + 1 >= index && (
-            <Block key={index} components={block} notifyIsVisible={() => updateLastVisibleBlockIndex(index)} />
-          )
-      )}
-    </ComponentsContainer>
-  );
-};
+//   return (
+//     <ComponentsContainer>
+//       {blocks.map(
+//         (block, index) =>
+//           lastVisibleBlockIndex + 1 >= index && (
+//             <Block key={index} components={block} notifyIsVisible={() => updateLastVisibleBlockIndex(index)} />
+//           )
+//       )}
+//     </ComponentsContainer>
+//   );
+// };
 
-const Block = ({ notifyIsVisible, components }) => {
-  const [ref, inView] = useInView();
+// const Block = ({ notifyIsVisible, components }) => {
+//   const [ref, inView] = useInView();
 
-  useEffect(() => {
-    if (inView) notifyIsVisible();
-  }, [inView, notifyIsVisible]);
+//   useEffect(() => {
+//     if (inView) notifyIsVisible();
+//   }, [inView, notifyIsVisible]);
 
-  const ResizeHandle = (
-    <ResizeHandleButton>
-      <HandleIcon tw="w-4 h-4 text-gray-600" />
-    </ResizeHandleButton>
-  );
+//   const ResizeHandle = (
+//     <ResizeHandleButton>
+//       <HandleIcon tw="w-4 h-4 text-gray-600" />
+//     </ResizeHandleButton>
+//   );
 
-  const componentBlockRefs = {};
+//   const componentBlockRefs = {};
 
-  const updateComponentBlockIframeHeight = iframe => {
-    iframe.style.height = "auto";
-    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + "px";
-  };
+//   const updateComponentBlockIframeHeight = iframe => {
+//     iframe.style.height = "auto";
+//     iframe.style.height = iframe.contentWindow.document.body.scrollHeight + "px";
+//   };
 
-  return (
-    <div ref={ref} tw="mt-32">
-      <ComponentsType>{components.type}</ComponentsType>
-      <Components>
-        {Object.values(components.elements).map((component, componentIndex) => (
-          <Component key={componentIndex}>
-            <ComponentHeading>
-              <ComponentName>{component.name}</ComponentName>
-              <ComponentPreviewLink className="group" href={component.url} target="_blank">
-                View Live Demo{" "}
-                <ArrowRightIcon tw="transition duration-300 transform group-hover:translate-x-px ml-2 w-4 h-4" />
-              </ComponentPreviewLink>
-            </ComponentHeading>
-            <ComponentContent>
-              <ResizableBox
-                minWidth={310}
-                default={{
-                  width: "100%",
-                  height: "100%"
-                }}
-                bounds="parent"
-                disableDragging={true}
-                enableResizing={{ right: true }}
-                resizeHandleComponent={{ right: ResizeHandle }}
-                resizeHandleWrapperClass={`resizeHandleWrapper`}
-                onResize={() => updateComponentBlockIframeHeight(componentBlockRefs[component.url])}
-              >
-                <iframe
-                  src={component.url}
-                  title="Hero"
-                  width="100%"
-                  ref={ref => (componentBlockRefs[component.url] = ref)}
-                  onLoad={e => updateComponentBlockIframeHeight(e.target)}
-                />
-              </ResizableBox>
-            </ComponentContent>
-          </Component>
-        ))}
-      </Components>
-    </div>
-  );
-};
+//   return (
+//     <div ref={ref} tw="mt-32">
+//       <ComponentsType>{components.type}</ComponentsType>
+//       <Components>
+//         {Object.values(components.elements).map((component, componentIndex) => (
+//           <Component key={componentIndex}>
+//             <ComponentHeading>
+//               <ComponentName>{component.name}</ComponentName>
+//               <ComponentPreviewLink className="group" href={component.url} target="_blank">
+//                 View Live Demo{" "}
+//                 <ArrowRightIcon tw="transition duration-300 transform group-hover:translate-x-px ml-2 w-4 h-4" />
+//               </ComponentPreviewLink>
+//             </ComponentHeading>
+//             <ComponentContent>
+//               <ResizableBox
+//                 minWidth={310}
+//                 default={{
+//                   width: "100%",
+//                   height: "100%"
+//                 }}
+//                 bounds="parent"
+//                 disableDragging={true}
+//                 enableResizing={{ right: true }}
+//                 resizeHandleComponent={{ right: ResizeHandle }}
+//                 resizeHandleWrapperClass={`resizeHandleWrapper`}
+//                 onResize={() => updateComponentBlockIframeHeight(componentBlockRefs[component.url])}
+//               >
+//                 <iframe
+//                   src={component.url}
+//                   title="Hero"
+//                   width="100%"
+//                   ref={ref => (componentBlockRefs[component.url] = ref)}
+//                   onLoad={e => updateComponentBlockIframeHeight(e.target)}
+//                 />
+//               </ResizableBox>
+//             </ComponentContent>
+//           </Component>
+//         ))}
+//       </Components>
+//     </div>
+//   );
+// };

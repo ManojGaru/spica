@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.67df7480.css",
-    "main.js": "/static/js/main.667812e2.js",
+    "main.js": "/static/js/main.b421f3ec.js",
     "static/media/gargi.jpg": "/static/media/gargi.8ecc07cf032c25226f15.jpg",
     "static/media/MainLandingPageHero.png": "/static/media/MainLandingPageHero.30b380787ef7adb09eb6.png",
     "static/media/AgencyLandingPage.jpeg": "/static/media/AgencyLandingPage.717f8ed6737d6161b153.jpeg",
@@ -102,10 +102,10 @@
     "static/media/arrow-right-3-icon.svg": "/static/media/arrow-right-3-icon.d415f77e8dc81ff77fdb53c0ee2da771.svg",
     "static/media/handle-icon.svg": "/static/media/handle-icon.75eb6395a03cd55833f64fd24df39ff5.svg",
     "main.67df7480.css.map": "/static/css/main.67df7480.css.map",
-    "main.667812e2.js.map": "/static/js/main.667812e2.js.map"
+    "main.b421f3ec.js.map": "/static/js/main.b421f3ec.js.map"
   },
   "entrypoints": [
     "static/css/main.67df7480.css",
-    "static/js/main.667812e2.js"
+    "static/js/main.b421f3ec.js"
   ]
 }
