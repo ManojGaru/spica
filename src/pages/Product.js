@@ -29,9 +29,9 @@ export default () => {
   useEffect(()=>{
     if(!selectedProduct){
       // console.log(selectedProduct,'ppppppppp');
-      setSelectedProduct(productsCards.find(item=>item.id == id))
+      setSelectedProduct(productsCards?.find(item=>item.id == id))
     }
-  },[id,setSelectedProduct])
+  },[id,selectedProduct,setSelectedProduct])
   return (
     <AnimationRevealPage>
       <Header />
