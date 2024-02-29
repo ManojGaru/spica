@@ -31,7 +31,7 @@ export default () => {
       // console.log(selectedProduct,'ppppppppp');
       setSelectedProduct(productsCards.find(item=>item.id == id))
     }
-  },[])
+  },[id])
   return (
     <AnimationRevealPage>
       <Header />

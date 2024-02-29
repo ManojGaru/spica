@@ -96,7 +96,7 @@ export default () => {
         </HeadingInfoContainer>
 
         <Content>
-          {productsCards.map((card, i) => (
+          {productsCards?.map((card, i) => (
             <Card key={i} reversed={i % 2 === 1}>
               <Image imageSrc={card.imageSrc} style={{height:120,width:250,backgroundSize:'cover'}}/>
               <Details>
